@@ -58,22 +58,3 @@ class MofosexIE(KeezMoviesIE):
 
         return info
 
-
-class MofosexEmbedIE(InfoExtractor):
-    _VALID_URL = r'https?://(?:www\.)?mofosex\.com/embed/?\?.*?\bvideoid=(?P<id>\d+)'
-    _TESTS = [{
-        'url': 'https://www.mofosex.com/embed/?videoid=318131&referrer=KM',
-        'only_matching': True,
-    }]
-
-    @staticmethod
-    def _extract_urls(webpage):
-        return re.findall(
-            r'<iframe[^>]+\bsrc=["\']((?:https?:)?//(?:www\.)?mofosex\.com/embed/?\?.*?\bvideoid=\d+)',
-            webpage)
-
-    def _real_extract(self, url):
-        video_id = self._match_id(url)
-        return self.url_result(
-            'http://www.mofosex.com/videos/{0}/{0}.html'.format(video_id),
-            ie=MofosexIE.ie_key(), video_id=video_id)
