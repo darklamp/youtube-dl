@@ -1,8 +1,5 @@
 from __future__ import unicode_literals
 
-import re
-
-from .common import InfoExtractor
 from ..utils import (
     int_or_none,
     str_to_int,
@@ -57,4 +54,3 @@ class MofosexIE(KeezMoviesIE):
         })
 
         return info
-

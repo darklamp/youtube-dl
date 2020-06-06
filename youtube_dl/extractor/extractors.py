@@ -636,10 +636,7 @@ from .mixcloud import (
 from .mlb import MLBIE
 from .mnet import MnetIE
 from .moevideo import MoeVideoIE
-from .mofosex import (
-    MofosexIE,
-    MofosexEmbedIE,
-)
+from .mofosex import MofosexIE
 from .mojvideo import MojvideoIE
 from .morningstar import MorningstarIE
 from .motherless import (
